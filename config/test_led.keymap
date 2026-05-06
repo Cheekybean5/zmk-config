@@ -1,0 +1,23 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    behaviors {
+        blink: led_blink {
+            compatible = "zmk,behavior-leds";
+            label = "LED_BLINK";
+            #binding-cells = <0>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &blink  &blink  &blink  &blink
+                &blink  &blink  &blink  &blink
+            >;
+        };
+    };
+};
